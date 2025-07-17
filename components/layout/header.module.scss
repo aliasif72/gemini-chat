@@ -1,0 +1,81 @@
+.header {
+  height: var(--header-height);
+  border-bottom: 1px solid hsl(var(--border));
+  background-color: hsl(var(--background));
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 1rem;
+  backdrop-filter: blur(10px);
+  z-index: 50;
+}
+
+.left {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.menuButton {
+  @media (min-width: 768px) {
+    display: none;
+  }
+}
+
+.title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary)) 60%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.right {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.themeButton,
+.userButton {
+  position: relative;
+  
+  &:hover {
+    background-color: hsl(var(--accent));
+  }
+}
+
+.dropdown {
+  min-width: 200px;
+}
+
+.userInfo {
+  padding: 0.5rem 0.75rem;
+}
+
+.userPhone {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: hsl(var(--foreground));
+}
+
+.menuItem {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  
+  &:hover {
+    background-color: hsl(var(--accent));
+  }
+}
+
+.logoutItem {
+  @extend .menuItem;
+  color: hsl(var(--destructive));
+  
+  &:hover {
+    background-color: hsl(var(--destructive) / 0.1);
+  }
+}
